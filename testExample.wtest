@@ -1,9 +1,39 @@
-import example.pepita
+import example.*
 
-describe "group of tests for pepita" {
 
-  test "pepita has initial energy" {
-    assert.equals(100, pepita.energy())
+describe "Test de plaga" {
+
+  test "Cucrachas" {
+    const cucarachasAfricanas = new Cucarachas(poblacion = 30)
+    const cucarachasAmericanas = new Cucarachas(poblacion = 100)
+   
+    assert.equals(15, cucarachasAfricanas.nivelDeDaños())
+    assert.equals(800, cucarachasAmericanas.pesoPorCucaracha())
+  
   }
+
+  test "pulgas"{
+    const pulgasDeAbril = new Pulgas(poblacion = 50)
+    const pulgasDeMarzo = new Pulgas(poblacion = 70)
+    
+    assert.equals(140, pulgasDeMarzo.nivelDeDaños())
+  }
+
+   test "Garrapatas"{
+    const garrapatasDeAbril = new Pulgas(poblacion = 50)
+    const garrapatasDeMarzo = new Pulgas(poblacion = 70)
+    
+    assert.equals(140, garrapatasDeMarzo.nivelDeDaños())
+  }
+
+    test "Mosquito"{
+    const mosquitoDeVerano = new Mosquito(poblacion = 230)
+    const mosquitoDeInvierno = new Mosquito(poblacion = 333)
+    
+    assert.equals(230, mosquitoDeVerano.nivelDeDaños())
+    assert.that(mosquitoDeInvierno.tramitirEnfermdades())
+  }
+
+
 
 }
