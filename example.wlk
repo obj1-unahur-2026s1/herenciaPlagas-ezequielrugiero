@@ -1,3 +1,5 @@
+
+import elementos.*
 class Plagas {
   var poblacion
   var nivelDeDaños = 0
@@ -17,6 +19,13 @@ class Plagas {
   }
 
   method condicionAdicional()
+
+  method atacarA(unElemento){
+    unElemento.recibirAtaqueDe(self)
+    poblacion = poblacion * 1.1
+  }
+
+  
 
 
 }
@@ -38,6 +47,10 @@ class Cucarachas inherits Plagas {
       return pesoActual >= 10
    }
 
+  override method atacarA(unElemento){
+    super(unElemento)
+    pesoActual = pesoActual + 2
+  }
 }
 
 class Pulgas inherits Plagas {
@@ -48,10 +61,16 @@ class Pulgas inherits Plagas {
   }
   override method condicionAdicional(){}
 
+  
 }
 
 class Garrapatas inherits Pulgas {
-
+  override method atacarA(unElemento){
+      unElemento.recibirAtaqueDe(self)
+      poblacion = poblacion * 1.2
+  
+ 
+  }
 }
 
 
